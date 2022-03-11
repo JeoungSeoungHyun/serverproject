@@ -1,0 +1,106 @@
+{{>/layout/header}}
+    <!-- 상세보기 박스 시작 -->
+    <div class="container mt-3">
+        <table class="table table-striped">
+            <!-- 테이블 메뉴 시작 -->
+          <thead>
+            <tr>
+              <th>분류</th>
+              <th>정보</th>
+            </tr>
+          </thead>
+          <!-- 테이블 메뉴 끝 -->
+          <!-- 테이블 내용 시작 -->
+          {{#hospital}}
+          <tbody>
+            {{#id}}
+            <tr>
+              <td>Id</td>
+              <td>{{id}}</td>
+            </tr>
+            {{/id}}
+            {{#yadmNm}}
+            <tr>
+                <td>요양기관명</td>
+                <td>{{yadmNm}}</td>
+            </tr>
+            {{/yadmNm}}
+            {{#sidoCdNm}}
+            <tr>
+                <td>시도명</td>
+                <td>{{sidoCdNm}}</td>
+            </tr>
+            {{/sidoCdNm}}
+            {{#sgguCdNm}}
+            <tr>
+                <td>시군구명</td>
+                <td>{{sgguCdNm}}</td>
+            </tr>
+            {{/sgguCdNm}}
+            {{#addr}}
+            <tr>
+                <td>주소</td>
+                <td>{{addr}}</td>
+            </tr>
+            {{/addr}}
+            {{#mgtStaDd}}
+            <tr>
+                <td>운영시작일자</td>
+                <td>{{mgtStaDd}}</td>
+            </tr>
+            {{/mgtStaDd}}
+            {{#pcrPsblYn}}
+            <tr>
+                <td>PCR가능여부</td>
+                <td>{{pcrPsblYn}}</td>
+            </tr>
+            {{/pcrPsblYn}}
+            {{#ratPsblYn}}
+            <tr>
+                <td>RAT가능여부</td>
+                <td>{{ratPsblYn}}</td>
+            </tr>
+            {{/ratPsblYn}}
+            {{#recuClCd}}
+            <tr>
+                <td>요양종별코드</td>
+                <td>{{recuClCd}}</td>
+            </tr>
+            {{/recuClCd}}
+            {{#ykihoEnc}}
+            <tr>
+                <td>암호화 된 요양기호</td>
+                <td>{{ykihoEnc}}</td>
+            </tr>
+            {{/ykihoEnc}}
+            {{#xposWgs84}}
+            <tr>
+                <td>세계지구 x좌표</td>
+                <td>{{xposWgs84}}</td>
+            </tr>
+            {{/xposWgs84}}
+            {{#yposWgs84}}
+            <tr>
+                <td>세계지구 y좌표</td>
+                <td>{{yposWgs84}}</td>
+            </tr>
+            {{/yposWgs84}}
+            {{#xpos}}
+            <tr>
+                <td>x좌표</td>
+                <td>{{xpos}}</td>
+            </tr>
+            {{/xpos}}
+            {{#ypos}}
+            <tr>
+                <td>y좌표</td>
+                <td>{{ypos}}</td>
+            </tr>
+            {{/ypos}}
+        </tbody>
+        <!-- 테이블 내용 끝 -->
+        {{/hospital}}
+        </table>
+      </div>
+    <!-- 상세보기 박스 끝 -->
+{{>/layout/footer}}

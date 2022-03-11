@@ -7,20 +7,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Hospital</title>
 
-    
-    <style> 
-        
-        .bg_m{
-            background-color: rgb(111, 156, 240);
-        }
-
-        .box_m{
-            border-radius: 5px;
-        }
-
-        .text_m {
-            text-align: center;
-        }
+    <style>
+      /* 상세보기 버튼 padding*/
+      .box_m{
+        padding: 0;
+      }
     </style>
+
 </head>
-<body class="bg_m">
+<body>
+    <!-- 네비게이션 시작 -->
+    <nav class="navbar navbar-expand-sm mb-2">
+        <div class="container ">
+          <a class="navbar-brand text-dark" href="/">Main</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/list">리스트</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/download">다운로드</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <!-- 네비게이션 끝 -->

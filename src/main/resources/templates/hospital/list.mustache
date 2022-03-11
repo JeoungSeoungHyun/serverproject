@@ -1,22 +1,38 @@
 {{>/layout/header}}
-<div class="mt-5"></div>
-    {{#hospitals}}
-    <div class="mt-2 bg-light box_m container mx-auto text_m ">
-        {{#id}} Id : {{id}}/{{/id}} 
-        {{#addr}} 주소:{{addr}}/{{/addr}} 
-        {{#yadmNm}} 요양기관명 :{{yadmNm}}/{{/yadmNm}}
-        {{#pcrPsblYn}} PCR가능여부 :{{pcrPsblYn}}/{{/pcrPsblYn}}
-        {{#ratPsblYn}} RAT가능여부 :{{ratPsblYn}}{{/ratPsblYn}} <br/>
-        {{#sidoCdNm}} 시도명 :{{sidoCdNm}}/{{/sidoCdNm}} 
-        {{#sgguCdNm}} 시군구명 :{{sgguCdNm}}/{{/sgguCdNm}}
-        {{#recuClCd}} 요양종별코드 :{{recuClCd}}/{{/recuClCd}} 
-        {{#mgtStaDd}} 운영시작일자 :{{mgtStaDd}}{{/mgtStaDd}} <br/>
-        {{#ykihoEnc}} ykihoEnc :{{ykihoEnc}}{{/ykihoEnc}}
-        {{#xposWgs84}} xposWgs84 : {{xposWgs84}}{{/xposWgs84}}
-        {{#yposWgs84}} yposWgs84 :{{yposWgs84}}{{/yposWgs84}}
-        {{#xpos}} xpos :{{xpos}}{{/xpos}}
-        {{#ypos}} ypos :{{ypos}}{{/ypos}}
-    </div>
-    {{/hospitals}}
-
+    <!-- 리스트 박스 시작 -->
+    <div class="container mt-3">
+        <table class="table table-striped">
+          <!-- 테이블 메뉴 시작 -->
+          <thead>
+            <tr>
+              <th>병원명</th>
+              <th>주소</th>
+              <th>PCR 가능 여부</th>
+              <th>신속항원검사 가능여부</th>
+              <th>상세보기</th>
+            </tr>
+          </thead>
+          <!-- 테이블 메뉴 끝 -->
+          <!-- 테이블 내용 시작 -->
+          <tbody>
+              {{#hospitals}}
+            <tr>
+              <td>{{yadmNm}}</td>
+              <td>{{addr}}</td>
+              <td>{{pcrPsblYn}}</td>
+              <td>{{ratPsblYn}}</td>
+              <!-- 상세보기 페이지 이동 버튼 시작 -->
+              <td>
+                  <div class="card-body box_m">
+                    <a href="/detail/{{id}}" class="btn btn-ligth">상세보기</a>
+                  </div>
+              </td>
+              <!-- 상세보기 페이지 이동 버튼 끝 -->
+            </tr>
+            {{/hospitals}}
+          </tbody>
+        </table>
+        <!-- 테이블 내용 끝 -->
+      </div>
+    <!-- 리스트 박스 끝 -->
 {{>/layout/footer}}
