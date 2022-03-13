@@ -1,10 +1,11 @@
 package site.metatcoding.serverproject.web;
 
 import java.util.Arrays;
-
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,7 +43,8 @@ public class DownloadController {
         sb.append("&sgguCdNm="); // 시군구명
         sb.append("부산사하구");
 
-        // Item[] response = rt.getForEntity(sb.toString(), Item[].class);
+        // ResponseEntity<Item[]> response = rt.getForEntity(sb.toString(),
+        // Item[].class);
         Hospital[] response = rt.getForObject(sb.toString(), Hospital[].class);
 
         List<Hospital> hospitals = Arrays.asList(response);
