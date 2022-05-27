@@ -45,11 +45,12 @@ public class DownloadController {
 
         // ResponseEntity<Item[]> response = rt.getForEntity(sb.toString(),
         // Item[].class);
+
         Hospital[] response = rt.getForObject(sb.toString(), Hospital[].class);
 
         List<Hospital> hospitals = Arrays.asList(response);
 
-        // DB에 saveALL() + model에 담기
+        // // DB에 saveALL() + model에 담기
         hospitalRepository.saveAll(hospitals);
 
         return "/";
@@ -70,7 +71,7 @@ public class DownloadController {
 
     // PK(id)로 DB에서 SELECT하여 VIEW에 전달하는 메서드
     @GetMapping("/detail/{id}")
-    public String detail(@PathVariable int id, Model model) {
+    public String detail(@PathVariable long id, Model model) {
 
         // DB로부터 SELECT
         // null값도 담기 위해 Optional 사용
