@@ -1,7 +1,6 @@
 package site.metatcoding.serverproject.web;
 
 import java.util.Arrays;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -42,12 +41,14 @@ public class DownloadController {
         sb.append("&sgguCdNm="); // 시군구명
         sb.append("부산사하구");
 
-        // Item[] response = rt.getForEntity(sb.toString(), Item[].class);
+        // ResponseEntity<Item[]> response = rt.getForEntity(sb.toString(),
+        // Item[].class);
+        // System.out.println(response.getBody().length);
         Hospital[] response = rt.getForObject(sb.toString(), Hospital[].class);
 
         List<Hospital> hospitals = Arrays.asList(response);
 
-        // DB에 saveALL() + model에 담기
+        // // DB에 saveALL() + model에 담기
         hospitalRepository.saveAll(hospitals);
 
         return "/";
@@ -68,7 +69,7 @@ public class DownloadController {
 
     // PK(id)로 DB에서 SELECT하여 VIEW에 전달하는 메서드
     @GetMapping("/detail/{id}")
-    public String detail(@PathVariable int id, Model model) {
+    public String detail(@PathVariable long id, Model model) {
 
         // DB로부터 SELECT
         // null값도 담기 위해 Optional 사용
